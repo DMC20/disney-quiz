@@ -1,0 +1,47 @@
+body {font-family: 'Staatliches', cursive;
+  background-color: ivory;
+}
+h1,
+h2,
+p
+ {
+    text-align: center;
+    font-size: 34px;
+    font-weight: 700;
+    justify-content: center;
+  }
+  
+  .container {
+    text-align: center;
+  }
+  
+  button {
+    font-family: 'Staatliches', cursive;
+    text-align: center;
+    padding: 10px;
+    margin: 24px;
+    cursor: pointer;
+    font-size: 24px;
+    background-color: #de5d83;
+    color: white;
+    display: block;
+    max-width: 300px;
+    margin: auto;
+    margin-bottom: 15px;
+    border-radius: 12px;
+  }
+
+
+.hide {
+  display: none;
+}
+
+.show{
+  display: show;
+}
+
+.input-group {
+  text-align: center;
+  margin-bottom: 15px;
+  
+}

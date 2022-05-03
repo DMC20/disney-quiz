@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disney Trivia</title>
+    <link rel="stylesheet" href="./style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
+</head>
+
+<body>
+   <header>
+    <h1 class="page-title">Disney Trivia Quiz</h1>
+</header> 
+<!-- Quiz container -->
+    <div id="container">
+
+        <!-- Start Div -->
+        <div id='startScreen' class='show'>
+            <!-- Explation of app -->
+             <h2>Click "Start" when you are ready to begin! Each incorrect answer results in a 3 second penalty!</h2>
+          <button id="startTimer">Start</button>
+        </div>
+
+        <!-- //QUIZ AREA -->
+
+        <div id='quizArea' class='hide'>
+             <p>Timer:<span id="countdownTimer">45</span></p>
+            <h2 id='questions'></h2>
+            <div id='choices'><a class="button is link"></a></div>
+        </div>
+
+        <!-- End Screen -->
+        <div id='endDiv' class='hide'>
+            <h2>All Done!</h2>
+            <!-- <button id="start-over">Play Again?</button> -->
+        </div>
+    </div>
+  
+    <script src="./logic.js"></script>
+</body>
+</html>
+
+<!-- Iwrilsd93! -->
