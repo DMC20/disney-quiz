@@ -56,30 +56,30 @@ const quizQuestions = [
     correctAnswer: "Emily",
   },
 ];
-// variables for targeting html elements/atrrtibutes
-const timerEl = document.getElementById("countdownTimer");
-const startBtnEl = document.getElementById("startTimer");
-const startScreen = document.getElementById("startScreen");
-const choices = document.getElementById("choices");
-const containerEl = document.getElementById("container");
-const quizArea = document.getElementById("quizArea");
-const questArea = document.getElementById("questions");
-const results = document.getElementById("endDiv");
+var timerEl = document.getElementById("countdownTimer");
+var startBtnEl = document.getElementById("startTimer");
+var startScreen = document.getElementById("startScreen");
+var choices = document.getElementById("choices");
+var containerEl = document.getElementById("container");
+var quizArea = document.getElementById("quizArea");
+var questArea = document.getElementById("questions");
+var results = document.getElementById("endDiv");
+var score = document.getAnimations("results");
 
 // quiz start score of 0
-let score = 0;
+var score = 0;
 // start on first question
-let currentQuestion = 0;
+var currentQuestion = 0;
 
 // timer ***change back to 15sec***
-let timeLeft = 45;
-let holdTime = 0;
-let penalty = 3;
-let btn;
+var timeLeft = 30;
+var holdTime = 0;
+var penalty = 3;
+var btn;
 
-const checkAnswer = () => {
-  let choice = this.value;
-  let correctAn = quizQuestions[currentQuestion].correctAnswer;
+function checkAnswer() {
+  var choice = this.value;
+  var correctAn = quizQuestions[currentQuestion].correctAnswer;
   if (choice === correctAn) {
     score++;
   } else {
@@ -94,16 +94,16 @@ const checkAnswer = () => {
   } else {
     startQuiz();
   }
-};
+}
 
 // start quiz function
-const startQuiz = () => {
+function startQuiz() {
   //render question
-  let quest = quizQuestions[currentQuestion].question;
+  var quest = quizQuestions[currentQuestion].question;
   questArea.textContent = quest;
 
   //render choices as buttons
-  let options = quizQuestions[currentQuestion].answers;
+  var options = quizQuestions[currentQuestion].answers;
 
   for (let i = 0; i < options.length; i++) {
     btn = document.createElement("button");
@@ -112,17 +112,18 @@ const startQuiz = () => {
     btn.onclick = checkAnswer;
     choices.appendChild(btn);
   }
-};
+}
 
-const showResult = () => {
+function showResult() {
   timerEl.textContent = "";
   clearInterval(holdTime);
   alert(`You got ${score} / ${quizQuestions.length}`);
 
   quizArea.className = "hide";
   results.className = "show";
-};
+}
 
+// timer function
 startBtnEl.addEventListener("click", function () {
   startScreen.className = "hide";
   quizArea.className = "show";
@@ -132,6 +133,7 @@ startBtnEl.addEventListener("click", function () {
   if (holdTime === 0) {
     holdTime = setInterval(function () {
       timeLeft--;
+      holdTime.textContent = "You have " + timeLeft;
       timerEl.textContent = timeLeft;
 
       if (timeLeft < 0) {
